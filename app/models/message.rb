@@ -3,7 +3,7 @@ class Message < ApplicationRecord
 	belongs_to :to, class_name: "User", foreign_key: "to_id"
 	belongs_to :conversation
 
-	validates_presence_of :msg_text, :conversation_id, :from_id, :to_id
+	validates :msg_text, :conversation_id, :from_id, :to_id, presence: true
 
 	# private
 	# def msg_time
